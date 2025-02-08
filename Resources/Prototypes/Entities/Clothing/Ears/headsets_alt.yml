@@ -36,7 +36,7 @@
       key_slots:
       - EncryptionKeyCentCom
       - EncryptionKeyStationMaster
-  - type: Headset
+  - type: Headset # Corvax-Next-HeadsetSound
     toggledSoundChannels:
     - CentCom
     - Command
@@ -55,7 +55,7 @@
     containers:
       key_slots:
       - EncryptionKeyStationMaster
-  - type: Headset
+  - type: Headset # Corvax-Next-HeadsetSound
     toggledSoundChannels:
     - CentCom
     - Command

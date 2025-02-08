@@ -101,6 +101,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
 
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
+        // Corvax-Next-HeadsetSound-Start
         if (!TryComp<ActorComponent>(Transform(uid).ParentUid, out var actor))
             return;
 
@@ -113,6 +114,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
             return;
 
         _audio.PlayEntity(component.Sound, actor.PlayerSession, uid);
+        // Corvax-Next-HeadsetSound-End
     }
 
     private void OnEmpPulse(EntityUid uid, HeadsetComponent component, ref EmpPulseEvent args)

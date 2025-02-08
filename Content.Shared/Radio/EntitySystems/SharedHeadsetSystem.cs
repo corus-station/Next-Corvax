@@ -19,7 +19,7 @@ public abstract class SharedHeadsetSystem : EntitySystem
         SubscribeLocalEvent<HeadsetComponent, GotEquippedEvent>(OnGotEquipped);
         SubscribeLocalEvent<HeadsetComponent, GotUnequippedEvent>(OnGotUnequipped);
 
-        SubscribeLocalEvent<HeadsetComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
+        SubscribeLocalEvent<HeadsetComponent, GetVerbsEvent<Verb>>(OnGetVerbs); // Corvax-Next-HeadsetSound
     }
 
     private void OnGetDefault(EntityUid uid, HeadsetComponent component, InventoryRelayedEvent<GetDefaultRadioChannelEvent> args)
@@ -44,6 +44,7 @@ public abstract class SharedHeadsetSystem : EntitySystem
         component.IsEquipped = false;
     }
 
+    // Corvax-Next-HeadsetSound-Start
     private void OnGetVerbs(EntityUid uid, HeadsetComponent component, ref GetVerbsEvent<Verb> args)
     {
         if (!args.CanInteract || !args.CanComplexInteract || !args.CanAccess)
@@ -81,4 +82,5 @@ public abstract class SharedHeadsetSystem : EntitySystem
         else
             headset.Comp.ToggledSoundChannels.Remove(channel);
     }
+    // Corvax-Next-HeadsetSound-End
 }

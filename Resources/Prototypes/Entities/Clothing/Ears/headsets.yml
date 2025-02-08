@@ -13,12 +13,12 @@
       key_slots:
       - EncryptionKeyCommon
   - type: Headset
-    sound:
+    sound: # Corvax-Next-Headset-Sound
       collection: Headset
       params:
         volume: -5
         variation: 0.025
-    toggledSoundChannels:
+    toggledSoundChannels: # Corvax-Next-Headset-Sound
     - CentCom
     - Command
     - Engineering
@@ -102,7 +102,7 @@
       key_slots:
       - EncryptionKeyCentCom
       - EncryptionKeyStationMaster
-  - type: Headset
+  - type: Headset # Corvax-Next-Headset-Sound
     toggledSoundChannels:
     - CentCom
     - Command
@@ -122,7 +122,7 @@
     containers:
       key_slots:
       - EncryptionKeyStationMaster
-  - type: Headset
+  - type: Headset # Corvax-Next-Headset-Sound
     toggledSoundChannels:
     - CentCom
     - Command
