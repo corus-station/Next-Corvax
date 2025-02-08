@@ -15,8 +15,6 @@ public sealed class BloomOverlay : Overlay
 
     public const int MaxCount = 32;
 
-    private const float MaxDistance = 12f;
-
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
 
@@ -56,7 +54,7 @@ public sealed class BloomOverlay : Overlay
 
             mapPos += _transform.GetWorldRotation(uid).RotateVec(new(0, 6.5f / 16));
 
-            if ((mapPos - args.WorldAABB.ClosestPoint(mapPos)).LengthSquared() > MaxDistance * MaxDistance)
+            if ((mapPos - args.WorldAABB.ClosestPoint(mapPos)).LengthSquared() >= 1)
                 continue;
 
             var tempCoords = args.Viewport.WorldToLocal(mapPos);
