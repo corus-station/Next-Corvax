@@ -6,6 +6,7 @@
     ClothingShoesColorBrown: 2
     ClothingOuterCoatDetectiveLoadout: 1
     ClothingOuterCoatDetectiveLoadoutGrey: 1
+    ClothingOuterCoatDetectiveDark: 1 # Corvax-Resprite-Detective
     ClothingHeadHatFedoraBrown: 2
     ClothingUniformJumpsuitDetectiveGrey: 2
     ClothingUniformJumpskirtDetectiveGrey: 2
@@ -15,3 +16,4 @@
     ClothingHandsGlovesColorBlack: 2
     ClothingHandsGlovesLatex: 2
     ClothingHeadsetSecurity: 2
+    trayScanner: 2 # Corvax-Next-Stashes

@@ -85,7 +85,9 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory SelectType = new("verb-categories-select-type", null);
 
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
-
+      
+        public static readonly VerbCategory TurretControlMode = new("verb-categories-turret-control-mode", null); // Corvax-Next-TurretControl
+      
         public static readonly VerbCategory ToggleHeadsetSound = new("verb-categories-toggle-headset-sound", null); // Corvax-Next-HeadsetSound
     }
 }

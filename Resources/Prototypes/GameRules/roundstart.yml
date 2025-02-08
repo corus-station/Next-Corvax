@@ -191,12 +191,17 @@
 
 - type: entity
   id: TraitorReinforcement
-  parent: Traitor
+  parent: BaseTraitorRule
   components:
   - type: TraitorRule
     giveUplink: false
     giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
     giveBriefing: false
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      mindRoles:
+      - MindRoleTraitorReinforcement
 
 - type: entity
   id: Revolutionary
@@ -243,6 +248,13 @@
       min: 600
       max: 900
   - type: ZombieRule
+  - type: DelayedRule  # Corvax-Next-ZombieRework: Grace period of 5 minutes before you can turn, to avoid a random passenger ruining your plan
+    delay: 300
+    delayedComponents:
+    - type: PendingZombie
+    - type: ZombifyOnDeath
+    - type: IncurableZombie
+    endedPopup: zombie-bioterrorist-romerol-active
   - type: AntagSelection
     definitions:
     - prefRoles: [ InitialInfected ]
@@ -253,14 +265,21 @@
         - ZombieImmune
         - AntagImmune
       briefing:
-        text: zombie-patientzero-role-greeting
+        text: zombie-bioterrorist-role-greeting # Corvax-Next-ZombieRework: Different greeting
         color: Plum
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
-      - type: PendingZombie
-      - type: ZombifyOnDeath
-      - type: IncurableZombie
+      # Corvax-Next-ZombieRework-Start: Replaced in DelayedRule Component.
+      # - type: PendingZombie
+      # - type: ZombifyOnDeath
+      # - type: IncurableZombie
+      # Corvax-Next-ZombieRework-End
       - type: InitialInfected
+      # Corvax-MRP
+      - type: NpcFactionMember
+        addFriendlyFactions:
+        - Zombie
+      # Corvax
       mindRoles:
       - MindRoleInitialInfected
 
@@ -280,7 +299,6 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
-        
 
 - type: entityTable
   id: SpaceTrafficControlTable

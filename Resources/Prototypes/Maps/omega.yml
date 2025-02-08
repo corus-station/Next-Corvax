@@ -2,14 +2,16 @@
   id: Omega
   mapName: 'Omega'
   mapPath: /Maps/omega.yml
-  minPlayers: 7
-  maxPlayers: 35
+  # Corvax-start
+  minPlayers: 0
+  maxPlayers: 25
+  # Corvax-end
   stations:
     Omega:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Omega Station {1}'
+          mapNameTemplate: '{0} Омега {1}' # Corvax
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
@@ -19,6 +21,7 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
@@ -48,7 +51,7 @@
             SecurityOfficer: [ 4, 4 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 2, 2 ]
-            Lawyer: [ 1, 1 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]

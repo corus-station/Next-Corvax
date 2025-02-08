@@ -10,6 +10,7 @@
   id: StandardNanotrasenStation
   parent:
     - BaseStation
+    - BaseStationGoal # Corvax
     - BaseStationNews
     - BaseStationCargo
     - BaseStationJobsSpawning
@@ -22,9 +23,10 @@
     - BaseStationAlertLevels
     - BaseStationMagnet
     - BaseStationExpeditions
-    - BaseStationSiliconLawCrewsimov
+    - BaseStationSiliconLawNTDefault # Corvax-NTDefault
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
+    - BaseStationStockMarket # Corvax-Next-StockTrading
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform

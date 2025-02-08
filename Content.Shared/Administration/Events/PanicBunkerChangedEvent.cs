@@ -12,6 +12,7 @@ public sealed class PanicBunkerStatus
     public bool ShowReason;
     public int MinAccountAgeMinutes;
     public int MinOverallMinutes;
+    public bool DenyVpn; // Corvax-VPNGuard
 }
 
 [Serializable, NetSerializable]
