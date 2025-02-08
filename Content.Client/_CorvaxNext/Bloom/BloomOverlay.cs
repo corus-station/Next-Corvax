@@ -15,7 +15,7 @@ public sealed class BloomOverlay : Overlay
 
     public const int MaxCount = 32;
 
-    private const float MaxDistance = 20f;
+    private const float MaxDistance = 12f;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => true;
@@ -26,7 +26,6 @@ public sealed class BloomOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
         _shader = _prototype.Index<ShaderPrototype>("Bloom").Instance().Duplicate();
-        _shader.SetParameter("maxDistance", MaxDistance * EyeManager.PixelsPerMeter);
     }
 
     private readonly Vector2[] _positions = new Vector2[MaxCount];
