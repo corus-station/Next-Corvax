@@ -38,7 +38,7 @@
     softness: 1
     offset: "0, -0.5"
   - type: Bloom # Corvax-Next-Bloom
-    color: "#E0FFFF"
+    color: "#FFE4CE"
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
