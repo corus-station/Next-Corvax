@@ -44,15 +44,34 @@ public sealed class GrantSkillCommand : IConsoleCommand
         var component = _entity.EnsureComponent<SkillsComponent>(entity.Value);
 
         component.Skills.Add(skill);
+
+        _entity.Dirty(entity.Value, component);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
     {
         if (args.Length == 1)
-            return new([.. _entity.GetEntities().Select(entity => entity.Id.ToString()).Where(str => str.StartsWith(args[0])).Select(entity => new CompletionOption(entity))], "entityuid");
+            return CompletionResult.FromOptions(_entity.GetEntities()
+                .Select(entity => entity.Id.ToString())
+                .Where(str => str.StartsWith(args[0]))
+                .Select(entity => new CompletionOption(entity)));
 
         if (args.Length == 2)
-            return new([.. Enum.GetNames<Shared._CorvaxNext.Skills.Skills>().Where(name => name.StartsWith(args[1])).Select(name => new CompletionOption(name))], "skill");
+        {
+            var component = int.TryParse(args[0], out var id)
+                ? _entity.TryGetEntity(new(id), out var entity)
+                    ? _entity.TryGetComponent<SkillsComponent>(entity, out var comp)
+                        ? comp
+                        : null
+                    : null
+                : null;
+
+            return CompletionResult.FromOptions(Enum.GetValues<Shared._CorvaxNext.Skills.Skills>()
+                .Where(value => component?.Skills.Contains(value) != false)
+                .Select(value => value.ToString())
+                .Where(name => name.ToString().StartsWith(args[1]))
+                .Select(value => new CompletionOption(value.ToString())));
+        }
 
         return new([], null);
     }
