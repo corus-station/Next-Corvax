@@ -1,9 +1,12 @@
 using System.Linq;
+using Content.Server.Administration;
 using Content.Shared._CorvaxNext.Skills;
+using Content.Shared.Administration;
 using Robust.Shared.Console;
 
 namespace Content.Server._CorvaxNext.Skills.Commands;
 
+[AdminCommand(AdminFlags.Admin)]
 public sealed class GrantSkillCommand : IConsoleCommand
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
@@ -67,9 +70,9 @@ public sealed class GrantSkillCommand : IConsoleCommand
                 : null;
 
             return CompletionResult.FromOptions(Enum.GetValues<Shared._CorvaxNext.Skills.Skills>()
-                .Where(value => component?.Skills.Contains(value) != false)
+                .Where(value => component?.Skills.Contains(value) != true)
                 .Select(value => value.ToString())
-                .Where(name => name.ToString().StartsWith(args[1]))
+                .Where(name => name.ToString().StartsWith(args[1], true, null))
                 .Select(value => new CompletionOption(value.ToString())));
         }
 
