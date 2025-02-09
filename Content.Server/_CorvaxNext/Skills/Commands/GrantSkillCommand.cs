@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._CorvaxNext.Skills;
 using Robust.Shared.Console;
 
@@ -43,5 +44,16 @@ public sealed class GrantSkillCommand : IConsoleCommand
         var component = _entity.EnsureComponent<SkillsComponent>(entity.Value);
 
         component.Skills.Add(skill);
+    }
+
+    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+            return new([.. _entity.GetEntities().Select(entity => entity.Id.ToString()).Where(str => str.StartsWith(args[0])).Select(entity => new CompletionOption(entity))], "entityuid");
+
+        if (args.Length == 2)
+            return new([.. Enum.GetNames<Shared._CorvaxNext.Skills.Skills>().Where(name => name.StartsWith(args[1])).Select(name => new CompletionOption(name))], "skill");
+
+        return new([], null);
     }
 }
