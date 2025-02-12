@@ -40,7 +40,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
     private const float DamagePitchVariation = 0.05f;
 
-    private const float SpreadWithoutSkill = MathHelper.PiOver4; // Corvax-Next-Skills
+    private const float SpreadWithoutSkill = MathHelper.PiOver6; // Corvax-Next-Skills
 
     public override void Initialize()
     {
@@ -87,7 +87,7 @@ public sealed partial class GunSystem : SharedGunSystem
         var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle());
 
         // Corvax-Next-Skills-Start
-        if (user is not null && !_skills.HasSkill(user.Value, Skills.Shooting))
+        if (gun.RequiresSkill && user is not null && !_skills.HasSkill(user.Value, Skills.Shooting))
         {
             var spread = -SpreadWithoutSkill / 2 + Random.NextFloat() * SpreadWithoutSkill;
 

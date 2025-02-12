@@ -229,6 +229,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
     fireCost: 62.5
@@ -300,6 +301,7 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: Pulse
     fireCost: 200
@@ -327,6 +329,7 @@
     fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: Pulse
     fireCost: 100
@@ -354,6 +357,7 @@
     fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
     fireCost: 100
@@ -749,6 +753,7 @@
     fireRate: 2
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+    requiresSkill: true # Corvax-Next-Skills
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpread
     fireCost: 150
