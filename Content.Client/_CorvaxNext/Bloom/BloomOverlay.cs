@@ -1,4 +1,5 @@
 using Content.Shared._CorvaxNext.Bloom;
+using Content.Shared.Examine;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
@@ -12,6 +13,7 @@ public sealed class BloomOverlay : Overlay
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     private SharedTransformSystem? _transform = null;
+    private ExamineSystemShared? _examine = null;
 
     public const int MaxCount = 32;
 
@@ -40,6 +42,9 @@ public sealed class BloomOverlay : Overlay
         if (_transform is null && !_entity.TrySystem(out _transform))
             return false;
 
+        if (_examine is null && !_entity.TrySystem(out _examine))
+            return false;
+
         _count = 0;
         var query = _entity.EntityQueryEnumerator<BloomComponent, PointLightComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var bloom, out var light, out var transform))
@@ -48,6 +53,9 @@ public sealed class BloomOverlay : Overlay
                 continue;
 
             if (!light.Enabled)
+                continue;
+
+            if (!_examine.InRangeUnOccluded(args.Viewport.Eye.Position, _transform.GetMapCoordinates(uid), ExamineSystemShared.ExamineRange, null))
                 continue;
 
             var mapPos = _transform.GetWorldPosition(uid);
