@@ -55,17 +55,17 @@ public sealed class BloomOverlay : Overlay
             if (!light.Enabled)
                 continue;
 
-            if (!_examine.InRangeUnOccluded(args.Viewport.Eye.Position, _transform.GetMapCoordinates(uid), ExamineSystemShared.ExamineRange, null))
+            var mapPos = _transform.GetMapCoordinates(uid);
+
+            mapPos = new(mapPos.Position + _transform.GetWorldRotation(uid).RotateVec(new(0, 6.5f / 16)), mapPos.MapId);
+
+            if ((mapPos.Position - args.WorldAABB.ClosestPoint(mapPos.Position)).LengthSquared() >= 1)
                 continue;
 
-            var mapPos = _transform.GetWorldPosition(uid);
-
-            mapPos += _transform.GetWorldRotation(uid).RotateVec(new(0, 6.5f / 16));
-
-            if ((mapPos - args.WorldAABB.ClosestPoint(mapPos)).LengthSquared() >= 1)
+            if (!_examine.InRangeUnOccluded(args.Viewport.Eye.Position, mapPos, ExamineSystemShared.ExamineRange, null))
                 continue;
 
-            var tempCoords = args.Viewport.WorldToLocal(mapPos);
+            var tempCoords = args.Viewport.WorldToLocal(mapPos.Position);
             tempCoords.Y = args.Viewport.Size.Y - tempCoords.Y;
 
             _positions[_count] = tempCoords;
