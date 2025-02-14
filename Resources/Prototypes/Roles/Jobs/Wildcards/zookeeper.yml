@@ -9,6 +9,12 @@
   access:
   - Service
   - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - Butchering
 
 - type: startingGear
   id: ZookeeperGear

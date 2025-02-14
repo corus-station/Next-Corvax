@@ -6,12 +6,9 @@ namespace Content.Shared._CorvaxNext.Skills;
 public enum Skills
 {
     ShuttleControl,
-    AdvancedBuilding,
-    CyborgBuilding,
-    ResearchAndDevelopment,
-    AdvancedChemistry,
-    Surgery,
     Shooting,
+    AdvancedBuilding,
+    Surgery,
     MedicalEquipment,
     Butchering
 }
