@@ -1,0 +1,30 @@
+using Content.Shared._CorvaxNext.Skills;
+using Content.Shared.Implants;
+using Content.Shared.Implants.Components;
+using Content.Shared.Tag;
+
+namespace Content.Server._CorvaxNext.Skills;
+
+public sealed class SkillsSystem : SharedSkillsSystem
+{
+    [Dependency] private readonly TagSystem _tag = default!;
+
+    [ValidatePrototypeId<TagPrototype>]
+    public const string SkillsTag = "Skills";
+
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<SubdermalImplantComponent, ImplantImplantedEvent>(OnImplantImplanted);
+    }
+
+    private void OnImplantImplanted(Entity<SubdermalImplantComponent> entity, ref ImplantImplantedEvent e)
+    {
+        if (e.Implanted is null)
+            return;
+
+        if (!_tag.HasTag(e.Implant, SkillsTag))
+            return;
+
+        GrantAllSkills(e.Implanted.Value);
+    }
+}

@@ -19,7 +19,7 @@ public sealed class MoverController : SharedMoverController
 {
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 

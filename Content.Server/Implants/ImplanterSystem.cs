@@ -16,7 +16,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     // Corvax-Next-Skills-Start
     private const float ImplantDelayModifierWithoutSkill = 10;

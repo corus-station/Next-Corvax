@@ -11,6 +11,7 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     public string Command => "grantallskills";
 
@@ -38,11 +39,7 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
             return;
         }
 
-        var component = _entity.EnsureComponent<SkillsComponent>(entity.Value);
-
-        component.Skills.UnionWith(Enum.GetValues<Shared._CorvaxNext.Skills.Skills>());
-
-        _entity.Dirty(entity.Value, component);
+        _skills.GrantAllSkills(entity.Value);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

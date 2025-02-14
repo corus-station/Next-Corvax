@@ -23,7 +23,7 @@ public sealed class InjectorSystem : SharedInjectorSystem
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly ReactiveSystem _reactiveSystem = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
-    [Dependency] private readonly SkillsSystem _skills = default!;
+    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     private const float DelayModifierWithoutSkill = 5; // Corvax-Next-Skills
 
