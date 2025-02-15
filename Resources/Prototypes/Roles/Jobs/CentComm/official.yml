@@ -12,17 +12,6 @@
   - AllAccess
   access:
   - CentralCommand
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skills # Corvax-Next-Skills
-        skills:
-        - ShuttleControl
-        - Shooting
-        - AdvancedBuilding
-        - Surgery
-        - MedicalEquipment
-        - Butchering
 
 - type: startingGear
   id: CentcomGear
