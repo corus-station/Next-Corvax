@@ -1,6 +1,5 @@
 using Content.Shared._CorvaxNext.Skills;
 using Content.Shared.Implants;
-using Content.Shared.Implants.Components;
 using Content.Shared.Tag;
 
 namespace Content.Server._CorvaxNext.Skills;
@@ -14,10 +13,10 @@ public sealed class SkillsSystem : SharedSkillsSystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<SubdermalImplantComponent, ImplantImplantedEvent>(OnImplantImplanted);
+        SubscribeLocalEvent<ImplantImplantedEvent>(OnImplantImplanted);
     }
 
-    private void OnImplantImplanted(Entity<SubdermalImplantComponent> entity, ref ImplantImplantedEvent e)
+    private void OnImplantImplanted(ref ImplantImplantedEvent e)
     {
         if (e.Implanted is null)
             return;

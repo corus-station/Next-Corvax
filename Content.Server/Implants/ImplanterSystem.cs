@@ -78,7 +78,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
 
 
             //Implant self instantly, otherwise try to inject the target.
-            if (args.User == target)
+            if (args.User == target && _skills.HasSkill(args.User, Skills.Surgery)) // Corvax-Next-Skills
                 Implant(target, target, uid, component);
             else
                 TryImplant(component, args.User, target, uid);
@@ -116,6 +116,11 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
 
         if (!_doAfter.TryStartDoAfter(args))
             return;
+
+        // Corvax-Next-Skills-Start
+        if (user == target)
+            return;
+        // Corvax-Next-Skills-End
 
         _popup.PopupEntity(Loc.GetString("injector-component-injecting-user"), target, user);
 

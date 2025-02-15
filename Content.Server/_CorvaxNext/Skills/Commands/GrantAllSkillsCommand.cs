@@ -11,7 +11,6 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
 {
     [Dependency] private readonly ILocalizationManager _localization = default!;
     [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly SharedSkillsSystem _skills = default!;
 
     public string Command => "grantallskills";
 
@@ -39,7 +38,7 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
             return;
         }
 
-        _skills.GrantAllSkills(entity.Value);
+        _entity.System<SharedSkillsSystem>().GrantAllSkills(entity.Value);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

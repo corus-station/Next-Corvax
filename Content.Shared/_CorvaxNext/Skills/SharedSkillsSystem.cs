@@ -1,7 +1,6 @@
 namespace Content.Shared._CorvaxNext.Skills;
 
-[Virtual]
-public class SharedSkillsSystem : EntitySystem
+public abstract class SharedSkillsSystem : EntitySystem
 {
     public bool HasSkill(EntityUid entity, Skills skill, SkillsComponent? component = null)
     {
