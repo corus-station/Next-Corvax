@@ -119,7 +119,6 @@
         - ShuttleControl
         - Shooting
         - AdvancedBuilding
-        - Contraband
         - Surgery
         - MedicalEquipment
         - Butchering
@@ -145,7 +144,6 @@
         - ShuttleControl
         - Shooting
         - AdvancedBuilding
-        - Contraband
         - Surgery
         - MedicalEquipment
         - Butchering
@@ -173,7 +171,6 @@
         - ShuttleControl
         - Shooting
         - AdvancedBuilding
-        - Contraband
         - Surgery
         - MedicalEquipment
         - Butchering
@@ -219,7 +216,6 @@
         - ShuttleControl
         - Shooting
         - AdvancedBuilding
-        - Contraband
         - Surgery
         - MedicalEquipment
         - Butchering
@@ -265,7 +261,6 @@
         - ShuttleControl
         - Shooting
         - AdvancedBuilding
-        - Contraband
         - Surgery
         - MedicalEquipment
         - Butchering
@@ -331,7 +326,6 @@
         - ShuttleControl
         - Shooting
         - AdvancedBuilding
-        - Contraband
         - Surgery
         - MedicalEquipment
         - Butchering
