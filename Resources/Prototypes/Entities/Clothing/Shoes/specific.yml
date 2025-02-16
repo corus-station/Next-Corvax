@@ -152,6 +152,8 @@
         - Scientist
         - Borg
 # Corvax-HiddenDesc-End
+  - type: Contraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   parent: ClothingShoesBaseButcherable

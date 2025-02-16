@@ -1139,6 +1139,8 @@
         - CartridgeMagnum
         - SpeedLoaderMagnum
     proto: CartridgeMagnumAP
+  - type: Contraband # Corvax-Next-Contraband
+    level: Unusual
 
 - type: entity
   parent: BaseItem

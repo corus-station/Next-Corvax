@@ -2274,6 +2274,8 @@
         damage: 50
       behaviors:
       - !type:ExplodeBehavior
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
   # I have included a snake_hiss.ogg sound file so if you want to use that be my guest
 - type: entity
@@ -3035,6 +3037,8 @@
         Slash: 6
         Piercing: 6
         Structural: 15
+  - type: Contraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   name: space cat

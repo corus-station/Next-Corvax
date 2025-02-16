@@ -1788,6 +1788,8 @@
       - Botanist
       - Borg
   # Corvax-HiddenDesc-End
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: capfruit

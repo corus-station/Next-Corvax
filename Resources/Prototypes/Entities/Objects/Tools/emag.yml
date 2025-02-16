@@ -33,6 +33,8 @@
         - StationEngineer
         - TechnicalAssistant
 # Corvax-HiddenDesc-End
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   parent: EmagUnlimited

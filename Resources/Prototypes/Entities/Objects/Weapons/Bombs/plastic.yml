@@ -72,6 +72,8 @@
   - type: HolidayRsiSwap
     sprite:
       festive: Objects/Weapons/Bombs/c4gift.rsi
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: seismic charge

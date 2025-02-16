@@ -86,6 +86,8 @@
           - Scientist
           - Borg
 # Corvax-HiddenDesc-End
+    - type: Contraband # Corvax-Next-Contraband
+      level: Danger
 
 - type: entity
   id: BigBox

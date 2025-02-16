@@ -484,6 +484,8 @@
         jobRequired:
           - SalvageSpecialist
 # Corvax-HiddenDesc-End
+    - type: Contraband # Corvax-Next-Contraband
+      level: Suspicious
         
 - type: entity
   name: broken energy shield

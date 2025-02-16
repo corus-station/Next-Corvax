@@ -103,3 +103,5 @@
           enum.FlashVisuals.LightLayer:
             True: {visible: true}
             False: {visible: false}
+    - type: Contraband # Corvax-Next-Contraband
+      level: Unusual

@@ -213,6 +213,8 @@
     layers:
     - state: crypt_red
     - state: synd_label
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   parent: [ EncryptionKey, BaseSiliconScienceContraband ]

@@ -366,6 +366,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 #Blood-red Medic Hardsuit
 - type: entity
@@ -390,6 +392,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 #Syndicate Elite Hardsuit
 - type: entity
@@ -419,6 +423,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 #Syndicate Commander Hardsuit
 - type: entity
@@ -443,6 +449,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 #Cybersun Juggernaut Hardsuit
 - type: entity
@@ -467,6 +475,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: Contraband # Corvax-Next-Contraband
+    level: Danger
 
 #Wizard Hardsuit
 - type: entity
