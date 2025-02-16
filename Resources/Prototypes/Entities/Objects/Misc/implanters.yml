@@ -191,7 +191,7 @@
   - type: Implanter
     implant: UplinkImplant
   - type: CNContraband # Corvax-Next-Contraband
-    level: Suspicious
+    level: Danger
 
 - type: entity
   id: EmpImplanter
