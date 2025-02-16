@@ -8,6 +8,7 @@ public enum Skills
     ShuttleControl,
     Shooting,
     AdvancedBuilding,
+    Contraband,
     Surgery,
     MedicalEquipment,
     Butchering

@@ -30,6 +30,7 @@
       - type: Skills # Corvax-Next-Skills
         skills:
         - AdvancedBuilding
+        - Contraband
 
 - type: startingGear
   id: ResearchDirectorGear
