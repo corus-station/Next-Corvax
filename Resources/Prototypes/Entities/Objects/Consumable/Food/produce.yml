@@ -1788,7 +1788,7 @@
       - Botanist
       - Borg
   # Corvax-HiddenDesc-End
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

@@ -1,6 +1,6 @@
 namespace Content.Shared._CorvaxNext.Contraband;
 
-public enum ContrabandLevel
+public enum CNContrabandLevel
 {
     Unusual,
     Suspicious,

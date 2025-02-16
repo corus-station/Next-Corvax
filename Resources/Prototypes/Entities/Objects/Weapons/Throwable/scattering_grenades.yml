@@ -96,7 +96,7 @@
   - type: EmitSoundOnTrigger
     sound:
       path: "/Audio/Machines/door_lock_off.ogg"
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

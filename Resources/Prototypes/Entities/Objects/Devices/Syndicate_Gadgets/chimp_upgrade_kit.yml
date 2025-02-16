@@ -12,5 +12,5 @@
   - type: Tag
     tags:
     - WeaponPistolCHIMPUpgradeKit
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Unusual

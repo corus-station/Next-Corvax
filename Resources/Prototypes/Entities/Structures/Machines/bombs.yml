@@ -126,7 +126,7 @@
       totalIntensity: 4000.0
       intensitySlope: 3
       maxIntensity: 400
-    - type: Contraband # Corvax-Next-Contraband
+    - type: CNContraband # Corvax-Next-Contraband
       level: Danger
 
 - type: entity

@@ -213,7 +213,7 @@
     layers:
     - state: crypt_red
     - state: synd_label
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

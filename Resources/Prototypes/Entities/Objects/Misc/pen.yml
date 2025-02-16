@@ -97,7 +97,7 @@
     state: overpriced_pen
   - type: Item
     heldPrefix: overpriced_pen
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

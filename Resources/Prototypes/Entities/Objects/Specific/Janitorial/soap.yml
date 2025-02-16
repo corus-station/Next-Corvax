@@ -140,7 +140,7 @@
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-red
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

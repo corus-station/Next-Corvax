@@ -580,7 +580,7 @@
 # Corvax-HiddenDesc-End
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Unusual
 
 - type: entity
@@ -615,7 +615,7 @@
 # Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
-    - type: Contraband # Corvax-Next-Contraband
+    - type: CNContraband # Corvax-Next-Contraband
       level: Unusual
 
 - type: entity
@@ -649,7 +649,7 @@
 # Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
-    - type: Contraband # Corvax-Next-Contraband
+    - type: CNContraband # Corvax-Next-Contraband
       level: Unusual
 
 - type: entity
@@ -683,7 +683,7 @@
 # Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
-    - type: Contraband # Corvax-Next-Contraband
+    - type: CNContraband # Corvax-Next-Contraband
       level: Unusual
 
 - type: entity
@@ -716,7 +716,7 @@
 # Corvax-HiddenDesc-End
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }
-    - type: Contraband # Corvax-Next-Contraband
+    - type: CNContraband # Corvax-Next-Contraband
       level: Unusual
 
 # _CorvaxNext Modules

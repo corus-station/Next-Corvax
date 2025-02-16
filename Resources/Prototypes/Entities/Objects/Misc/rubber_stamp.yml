@@ -221,7 +221,7 @@
     stampState: "paper_stamp-syndicate"
   - type: Sprite
     state: stamp-syndicate
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

@@ -29,7 +29,7 @@
         - MedicalDoctor
         - ChiefMedicalOfficer
 # Corvax-HiddenDesc-End
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Suspicious
 
 - type: entity

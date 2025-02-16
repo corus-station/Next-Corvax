@@ -52,7 +52,7 @@
     onlyAffectsMobs: false
   - type: UseDelay
     delay: 0.5
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity

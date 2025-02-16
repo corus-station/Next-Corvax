@@ -262,7 +262,7 @@
         mindRoles:
         - ThiefRole
 # Corvax-HiddenDesc-End
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Danger
 
 - type: entity
@@ -436,7 +436,7 @@
         type: MeleeSpeechBoundUserInterface
   - type: StaticPrice
     price: 0
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Suspicious
 
 - type: entity

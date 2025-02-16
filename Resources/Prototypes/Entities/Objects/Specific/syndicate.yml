@@ -89,7 +89,7 @@
   - type: Store
     balance:
       Telecrystal: 0
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Unusual
 
 - type: entity

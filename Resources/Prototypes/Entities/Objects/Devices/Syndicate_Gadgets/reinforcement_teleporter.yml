@@ -15,7 +15,7 @@
         type: GhostRoleRadioBoundUserInterface
   - type: ActivatableUI
     key: enum.GhostRoleRadioUiKey.Key
-  - type: Contraband # Corvax-Next-Contraband
+  - type: CNContraband # Corvax-Next-Contraband
     level: Unusual
 
 - type: entity
