@@ -126,6 +126,8 @@
       totalIntensity: 4000.0
       intensitySlope: 3
       maxIntensity: 400
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Danger
 
 - type: entity
   parent: SyndicateBomb

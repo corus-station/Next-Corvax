@@ -37,3 +37,5 @@
     powerLoad: 15000
   - type: StaticPrice
     price: 1500
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious

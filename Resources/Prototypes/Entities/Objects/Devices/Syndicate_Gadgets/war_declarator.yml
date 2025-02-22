@@ -24,3 +24,5 @@
       message: war-declarator-default-message
     - type: AccessReader
       access: [["NuclearOperative"]]
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Suspicious

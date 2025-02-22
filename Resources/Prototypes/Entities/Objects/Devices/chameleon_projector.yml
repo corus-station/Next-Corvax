@@ -20,6 +20,8 @@
       - MindContainer # no
       - Pda # PDAs currently make you invisible /!\
     disguiseProto: ChameleonDisguise
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   categories: [ HideSpawnMenu ]

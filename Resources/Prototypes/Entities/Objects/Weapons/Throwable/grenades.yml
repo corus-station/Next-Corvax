@@ -56,6 +56,8 @@
         volume: 5
     initialBeepDelay: 0
     beepInterval: 2 # 2 beeps total (at 0 and 2)
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: flashbang
@@ -139,6 +141,8 @@
       path: /Audio/Effects/minibombcountdown.ogg
       params:
         volume: 12
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: self destruct
@@ -226,6 +230,8 @@
           params:
             volume: 5
       - type: ExplodeOnTrigger
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   name: whitehole grenade
@@ -273,6 +279,8 @@
           params:
             volume: 15
       - type: DeleteOnTrigger
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   name: the nuclear option
@@ -365,6 +373,8 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/countdown.ogg
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: holy hand grenade
@@ -405,6 +415,8 @@
         - Scientist
         - Borg
 # Corvax-HiddenDesc-End
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
           
 - type: entity
   parent: [ GrenadeBase, BaseRestrictedContraband ]

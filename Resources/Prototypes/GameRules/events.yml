@@ -232,6 +232,14 @@
         nameSegments:
         - names_ninja_title
         - names_ninja
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNinja
 
@@ -494,6 +502,14 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeops
 
@@ -522,6 +538,15 @@
       blacklist:
         components:
         - AntagImmune
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleTraitorSleeper
 

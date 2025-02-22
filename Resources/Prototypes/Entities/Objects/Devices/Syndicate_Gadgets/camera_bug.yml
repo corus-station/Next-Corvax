@@ -23,3 +23,5 @@
     transmitFrequencyId: SurveillanceCamera
   - type: WiredNetworkConnection
   - type: SurveillanceCameraMonitor
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious

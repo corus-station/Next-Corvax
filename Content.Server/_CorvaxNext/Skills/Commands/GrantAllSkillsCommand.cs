@@ -38,11 +38,7 @@ public sealed class GrantAllSkillsCommand : IConsoleCommand
             return;
         }
 
-        var component = _entity.EnsureComponent<SkillsComponent>(entity.Value);
-
-        component.Skills.UnionWith(Enum.GetValues<Shared._CorvaxNext.Skills.Skills>());
-
-        _entity.Dirty(entity.Value, component);
+        _entity.System<SharedSkillsSystem>().GrantAllSkills(entity.Value);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

@@ -334,6 +334,8 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   id: BaseBorgChassisDerelict

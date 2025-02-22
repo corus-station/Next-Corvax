@@ -170,6 +170,8 @@
   components:
     - type: Implanter
       implant: StorageImplant
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Danger
 
 - type: entity
   id: FreedomImplanter
@@ -178,6 +180,8 @@
   components:
     - type: Implanter
       implant: FreedomImplant
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Danger
 
 - type: entity
   id: UplinkImplanter
@@ -186,6 +190,8 @@
   components:
   - type: Implanter
     implant: UplinkImplant
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   id: EmpImplanter
@@ -194,6 +200,8 @@
   components:
     - type: Implanter
       implant: EmpImplant
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Danger
 
 - type: entity
   id: ScramImplanter
@@ -202,6 +210,8 @@
   components:
     - type: Implanter
       implant: ScramImplant
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Danger
 
 - type: entity
   id: DnaScramblerImplanter
@@ -210,6 +220,8 @@
   components:
     - type: Implanter
       implant: DnaScramblerImplant
+    - type: CNContraband # Corvax-Next-Contraband
+      level: Danger
 
 #Nuclear Operative/Special implanters
 

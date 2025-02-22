@@ -96,6 +96,8 @@
   - type: EmitSoundOnTrigger
     sound:
       path: "/Audio/Machines/door_lock_off.ogg"
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   parent: [ScatteringGrenadeBase, BaseSyndicateContraband]

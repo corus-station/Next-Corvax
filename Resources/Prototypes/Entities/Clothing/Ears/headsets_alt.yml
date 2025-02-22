@@ -138,6 +138,8 @@
     sprite: Clothing/Ears/Headsets/syndicate.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/syndicate.rsi
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   parent: ClothingHeadsetAlt

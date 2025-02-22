@@ -178,3 +178,5 @@
     interfaces:
       enum.ThiefBackpackUIKey.Key:
         type: ThiefBackpackBoundUserInterface
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Unusual

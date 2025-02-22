@@ -221,6 +221,8 @@
     stampState: "paper_stamp-syndicate"
   - type: Sprite
     state: stamp-syndicate
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: warden's rubber stamp

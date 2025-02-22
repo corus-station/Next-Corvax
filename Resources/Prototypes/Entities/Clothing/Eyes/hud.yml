@@ -206,6 +206,8 @@
   - type: Clothing
     sprite: Clothing/Eyes/Hud/synd.rsi
   - type: ShowSyndicateIcons
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseSyndicateContraband]
@@ -219,6 +221,8 @@
     sprite: Clothing/Eyes/Hud/syndagent.rsi
   - type: ShowSyndicateIcons
   - type: ShowHealthBars
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons]

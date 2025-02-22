@@ -191,6 +191,8 @@
         whitelist:
           tags:
             - PowerCell
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   parent: ClothingOuterBase

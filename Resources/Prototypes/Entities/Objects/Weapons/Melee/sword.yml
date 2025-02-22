@@ -98,6 +98,8 @@
     - Back
     - Belt
   - type: Reflect
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: machete

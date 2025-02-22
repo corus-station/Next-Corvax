@@ -114,6 +114,14 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeopsCommander
     - prefRoles: [ NukeopsMedic ]
@@ -131,6 +139,14 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeopsMedic
     - prefRoles: [ Nukeops ]
@@ -150,6 +166,14 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleNukeops
 
@@ -186,6 +210,15 @@
         components:
         - AntagImmune
       lateJoinAdditional: true
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleTraitor
 
@@ -223,6 +256,14 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleHeadRevolutionary
 
@@ -280,6 +321,14 @@
         addFriendlyFactions:
         - Zombie
       # Corvax
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleInitialInfected
 

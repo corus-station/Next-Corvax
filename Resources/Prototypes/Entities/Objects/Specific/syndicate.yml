@@ -89,6 +89,8 @@
   - type: Store
     balance:
       Telecrystal: 0
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Unusual
 
 - type: entity
   parent: BaseUplinkRadio

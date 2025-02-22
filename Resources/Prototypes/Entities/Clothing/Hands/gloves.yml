@@ -262,6 +262,8 @@
         mindRoles:
         - ThiefRole
 # Corvax-HiddenDesc-End
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
@@ -434,6 +436,8 @@
         type: MeleeSpeechBoundUserInterface
   - type: StaticPrice
     price: 0
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Suspicious
 
 - type: entity
   parent: [ClothingHandsBase, BaseRestrictedContraband]

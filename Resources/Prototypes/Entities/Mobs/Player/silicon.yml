@@ -267,6 +267,8 @@
   - type: SiliconLawProvider
     laws: AntimovLawset
     lawUploadSound: /Audio/Ambience/Antag/silicon_lawboard_antimov.ogg
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   id: NutimovCircuitBoard

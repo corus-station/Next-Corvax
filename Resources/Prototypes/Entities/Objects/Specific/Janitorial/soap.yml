@@ -140,6 +140,8 @@
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-red
+  - type: CNContraband # Corvax-Next-Contraband
+    level: Danger
 
 - type: entity
   name: soaplet
