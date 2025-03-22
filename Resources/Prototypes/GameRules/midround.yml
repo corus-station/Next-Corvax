@@ -26,6 +26,15 @@
       startingGear: ThiefGear
 #      components: # Corvax-MRP
 #      - type: Pacified
+      components:
+      - type: Skills # Corvax-Next-Skills
+        skills:
+        - ShuttleControl
+        - Shooting
+        - AdvancedBuilding
+        - Surgery
+        - MedicalEquipment
+        - Butchering
       mindRoles:
       - MindRoleThief
       briefing:
