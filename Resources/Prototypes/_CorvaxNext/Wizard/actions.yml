@@ -218,7 +218,7 @@
   components:
   - type: EntityTargetAction
     raiseOnUser: true
-    useDelay: 30
+    useDelay: 20
     itemIconStyle: BigAction
     whitelist:
       components:
