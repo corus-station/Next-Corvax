@@ -10,7 +10,7 @@
       - !type:Emote
         conditions:
         - !type:HasComponentCondition
-          component: Wizard
+          component: CorvaxWizard
           guidebookComponentName: reagent-comp-condition-wizard
           invert: true
         emote: Cough
@@ -19,7 +19,7 @@
       - !type:DropItemsEntityEffect
         conditions:
         - !type:HasComponentCondition
-          component: Wizard
+          component: CorvaxWizard
           guidebookComponentName: reagent-comp-condition-wizard
           invert: true
         probability: 0.2
