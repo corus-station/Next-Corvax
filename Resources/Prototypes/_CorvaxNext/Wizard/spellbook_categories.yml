@@ -1,0 +1,24 @@
+- type: storeCategory
+  id: CorvaxSpellbookOffensive
+  name: store-caregory-corvaxspellbook-offensive
+  priority: 0
+
+- type: storeCategory
+  id: CorvaxSpellbookDefensive
+  name: store-caregory-corvaxspellbook-defensive
+  priority: 1
+
+- type: storeCategory
+  id: CorvaxSpellbookUtility
+  name: store-caregory-corvaxspellbook-utility
+  priority: 2
+
+- type: storeCategory
+  id: CorvaxSpellbookEquipment
+  name: store-caregory-corvaxspellbook-equipment
+  priority: 3
+
+- type: storeCategory
+  id: CorvaxSpellbookEvents
+  name: store-caregory-corvaxspellbook-events
+  priority: 4

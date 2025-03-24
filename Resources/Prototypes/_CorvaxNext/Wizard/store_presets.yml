@@ -1,0 +1,14 @@
+- type: entity
+  id: CorvaxStorePresetSpellbook
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-spellbook
+    categories:
+    - CorvaxSpellbookOffensive
+    - CorvaxSpellbookDefensive
+    - CorvaxSpellbookUtility
+    - CorvaxSpellbookEquipment
+    - CorvaxSpellbookEvents
+    currencyWhitelist:
+    - WizCoin

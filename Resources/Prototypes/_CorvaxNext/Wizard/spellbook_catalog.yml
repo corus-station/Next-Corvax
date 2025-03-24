@@ -7,7 +7,7 @@
   cost:
     WizCoin: 1
   categories:
-  - SpellbookOffensive
+  - CorvaxSpellbookOffensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -20,7 +20,7 @@
   cost:
     WizCoin: 1
   categories:
-  - SpellbookOffensive
+  - CorvaxSpellbookOffensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -33,11 +33,12 @@
   cost:
     WizCoin: 2
   categories:
-  - SpellbookOffensive
+  - CorvaxSpellbookOffensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
 
+# Защитные
 - type: listing
   id: SpellbookDisableTech
   name: spellbook-disable-tech-name
@@ -46,7 +47,7 @@
   cost:
     WizCoin: 1
   categories:
-  - SpellbookDefensive
+  - CorvaxSpellbookDefensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -59,7 +60,7 @@
   cost:
     WizCoin: 2
   categories:
-  - SpellbookDefensive
+  - CorvaxSpellbookDefensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -72,7 +73,7 @@
   cost:
     WizCoin: 1
   categories:
-  - SpellbookDefensive
+  - CorvaxSpellbookDefensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -85,7 +86,7 @@
   cost:
     WizCoin: 1
   categories:
-  - SpellbookDefensive
+  - CorvaxSpellbookDefensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -98,7 +99,7 @@
   cost:
     WizCoin: 2
   categories:
-  - SpellbookDefensive
+  - CorvaxSpellbookDefensive
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1

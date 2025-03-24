@@ -1,3 +1,9 @@
+ent-CorvaxWizardsGrimoire = гримуар волшебника
+    .desc = Древний гримуар обладающий волшебной энергией.
+ent-CorvaxWizardsGrimoireNoRefund = гримуар волшебника
+    .desc = Древний гримуар обладающий волшебной энергией.
+
+
 ent-ActionMimeMalaise = Мимическое недомогание
     .desc = ...
 ent-ActionBananaTouch = Банановое касание
