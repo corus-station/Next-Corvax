@@ -22,3 +22,5 @@ ent-ActionStopTime = Остановка времени
     .desc = Останавливает время вокруг заклинателя.
 ent-Chronofield = хронополе
     .desc = ZA WARUDO!
+ent-ActionCorpseExplosion = Разрыв тела
+    .desc = Наполняет труп энергией, заставляя его сильно взрываться.

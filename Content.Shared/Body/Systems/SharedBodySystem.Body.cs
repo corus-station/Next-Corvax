@@ -24,6 +24,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Utility;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Body.Systems;
@@ -440,7 +441,8 @@ public partial class SharedBodySystem
 
             DropSlotContents((partId, part));
             RemovePartChildren((partId, part), bodyEnt);
-            QueueDel(partId);
+            if (_net.IsServer) // Corvax-Next
+                QueueDel(partId);
             return true;
         }
 
