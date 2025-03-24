@@ -130,3 +130,21 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: entity
+  id: ActionSmoke
+  name: Smoke
+  description: Создает облако удушливого дыма возле вас.
+  components:
+  - type: InstantAction
+    raiseOnUser: true
+    checkCanInteract: false
+    useDelay: 12
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Effects/smoke.ogg
+    icon:
+      sprite: _CorvaxNext/Wizard/actions.rsi
+      state: smoke
+    event: !type:SmokeSpellEvent
+  - type: Magic
