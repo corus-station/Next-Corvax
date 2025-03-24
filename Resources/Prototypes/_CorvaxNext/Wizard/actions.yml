@@ -105,7 +105,7 @@
   - type: InstantAction
     raiseOnUser: true
     checkCanInteract: false
-    useDelay: 40
+    useDelay: 20
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/_CorvaxNext/Wizard/disable_tech.ogg
@@ -117,19 +117,6 @@
   - type: Magic
     requiresClothes: true
     requiresSpeech: true
-
-- type: listing
-  id: SpellbookMagicMissile
-  name: spellbook-magic-missile-name
-  description: spellbook-magic-missile-desc
-  productAction: ActionMagicMissile
-  cost:
-    WizCoin: 2
-  categories:
-  - SpellbookDefensive
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
 
 - type: entity
   id: ActionSmoke
@@ -148,3 +135,25 @@
       state: smoke
     event: !type:SmokeSpellEvent
   - type: Magic
+    requiresSpeech: true
+
+- type: entity
+  id: ActionRepulse
+  name: Repulse
+  description: Throws everything around the user away.
+  components:
+  - type: InstantAction
+    raiseOnUser: true
+    checkCanInteract: false
+    useDelay: 40
+    itemIconStyle: BigAction
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_CorvaxNext/Wizard/repulse.ogg
+    icon:
+      sprite: _CorvaxNext/Wizard/actions.rsi
+      state: repulse
+    event: !type:RepulseEvent
+      speech: action-speech-spell-repulse
+  - type: Magic
+    requiresClothes: true
+    requiresSpeech: true
