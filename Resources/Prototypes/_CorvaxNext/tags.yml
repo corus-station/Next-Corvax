@@ -45,3 +45,6 @@
 
 - type: Tag
   id: Skills
+
+- type: Tag
+  id: FrozenIgnoreMindAction
