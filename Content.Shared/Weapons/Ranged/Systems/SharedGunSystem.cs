@@ -606,6 +606,13 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
     }
 
+    public void SetTarget(EntityUid projectile, EntityUid target) // Corvax-Next
+    {
+        var targeted = EnsureComp<TargetedProjectileComponent>(projectile);
+        targeted.Target = target;
+        Dirty(projectile, targeted);
+    }
+
     protected abstract void CreateEffect(EntityUid gunUid, MuzzleFlashEvent message, EntityUid? user = null);
 
     /// <summary>
