@@ -24,3 +24,5 @@ ent-Chronofield = хронополе
     .desc = ZA WARUDO!
 ent-ActionCorpseExplosion = Разрыв тела
     .desc = Наполняет труп энергией, заставляя его сильно взрываться.
+ent-ActionBlindSpell = Слепота
+    .desc = Временно ослепляет одну цель.

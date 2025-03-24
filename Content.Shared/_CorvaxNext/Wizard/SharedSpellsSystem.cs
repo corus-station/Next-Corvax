@@ -7,6 +7,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Clumsy;
 using Content.Shared.Cluwne;
 using Content.Shared.Damage;
+using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Interaction.Components;
@@ -18,6 +19,7 @@ using Content.Shared.PDA;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Speech.Components;
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
@@ -27,6 +29,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._CorvaxNext.Wizard;
 
@@ -35,23 +38,20 @@ public abstract class SharedSpellsSystem : EntitySystem
     #region Dependencies
 
     [Dependency] protected readonly IMapManager MapManager = default!;
-    [Dependency] protected readonly StatusEffectsSystem StatusEffects = default!;
-    [Dependency] protected readonly InventorySystem Inventory = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] protected readonly EntityLookupSystem Lookup = default!;
     [Dependency] protected readonly SharedMapSystem Map = default!;
     [Dependency] protected readonly SharedStunSystem Stun = default!;
     [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
+    [Dependency] private   readonly INetManager _net = default!;
+    [Dependency] private   readonly IGameTiming _timing = default!;
+    [Dependency] private   readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private   readonly InventorySystem _inventory = default!;
     [Dependency] private   readonly SharedJitteringSystem _jitter = default!;
     [Dependency] private   readonly SharedStutteringSystem _stutter = default!;
     [Dependency] private   readonly SharedMagicSystem _magic = default!;
-    [Dependency] private   readonly EntityLookupSystem _lookup = default!;
     [Dependency] private   readonly SharedPopupSystem _popup = default!;
     [Dependency] private   readonly SharedGunSystem _gunSystem = default!;
-    [Dependency] private   readonly SharedTransformSystem _transform = default!;
-    [Dependency] private   readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private   readonly INetManager _net = default!;
     [Dependency] private   readonly SharedBodySystem _body = default!;
     [Dependency] private   readonly DamageableSystem _damageable = default!;
     [Dependency] private   readonly MobStateSystem _mobState = default!;
@@ -71,6 +71,7 @@ public abstract class SharedSpellsSystem : EntitySystem
         SubscribeLocalEvent<RepulseEvent>(OnRepulse);
         SubscribeLocalEvent<StopTimeEvent>(OnStopTime);
         SubscribeLocalEvent<CorpseExplosionEvent>(OnCorpseExplosion);
+        SubscribeLocalEvent<BlindSpellEvent>(OnBlind);
     }
 
     #region Spells
@@ -133,7 +134,7 @@ public abstract class SharedSpellsSystem : EntitySystem
         if (!targetWizard)
             MakeMime(ev.Target);
         else
-            StatusEffects.TryAddStatusEffect<MutedComponent>(ev.Target, "Muted", ev.WizardMuteDuration, true, status);
+            _statusEffects.TryAddStatusEffect<MutedComponent>(ev.Target, "Muted", ev.WizardMuteDuration, true, status);
 
         _magic.Speak(ev);
         ev.Handled = true;
@@ -244,6 +245,9 @@ public abstract class SharedSpellsSystem : EntitySystem
 
         var coords = TransformSystem.GetMapCoordinates(ev.Target);
 
+        if (_timing.IsFirstTimePredicted)
+            _body.GibBody(ev.Target, contents: GibContentsOption.Gib);
+
         ExplodeCorpse(ev);
 
         var targets = Lookup.GetEntitiesInRange<DamageableComponent>(coords, ev.KnockdownRange);
@@ -278,7 +282,40 @@ public abstract class SharedSpellsSystem : EntitySystem
                 Stun.TryKnockdown(target, ev.KnockdownTime / range, true, status);
         }
 
-        _body.GibBody(ev.Target, contents: GibContentsOption.Gib);
+        _magic.Speak(ev);
+        ev.Handled = true;
+    }
+
+    private void OnBlind(BlindSpellEvent ev)
+    {
+        if (ev.Handled || !_magic.PassesSpellPrerequisites(ev.Action, ev.Performer))
+            return;
+
+        if (HasComp<GhostComponent>(ev.Target) || HasComp<SpectralComponent>(ev.Target))
+            return;
+
+        if (!TryComp(ev.Target, out StatusEffectsComponent? status))
+            return;
+
+        _statusEffects.TryAddStatusEffect<TemporaryBlindnessComponent>(ev.Target,
+            "TemporaryBlindness",
+            ev.BlindDuration,
+            true,
+            status);
+
+        _statusEffects.TryAddStatusEffect<BlurryVisionComponent>(ev.Target,
+            "BlurryVision",
+            ev.BlurDuration,
+            true,
+            status);
+
+        if (_net.IsServer)
+        {
+            if (TryComp(ev.Target, out VocalComponent? vocal) && !HasComp<BorgChassisComponent>(ev.Target))
+                Emote(ev.Target, vocal.ScreamId);
+
+            Spawn(ev.Effect, Transform(ev.Target).Coordinates);
+        }
 
         _magic.Speak(ev);
         ev.Handled = true;
@@ -353,6 +390,10 @@ public abstract class SharedSpellsSystem : EntitySystem
     }
 
     protected virtual void ExplodeCorpse(CorpseExplosionEvent ev)
+    {
+    }
+
+    protected virtual void Emote(EntityUid uid, string emoteId)
     {
     }
 
