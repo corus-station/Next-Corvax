@@ -7,9 +7,26 @@
   - Dragon
   - SimpleHostile
   - Xeno
+  - CorvaxWizard
 
 - type: npcFaction
   id: TurretHostile
+  hostile:
+  - Dragon
+  - NanoTrasen
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - CorvaxWizard
+
+- type: npcFaction
+  id: CorvaxWizard
   hostile:
   - Dragon
   - NanoTrasen

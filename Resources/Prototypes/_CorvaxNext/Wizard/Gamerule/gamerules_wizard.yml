@@ -1,0 +1,91 @@
+- type: entity
+  abstract: true
+  parent: BaseGameRule
+  id: BaseCorvaxWizardRule
+  components:
+  - type: CorvaxWizardRule
+  - type: GameRule
+    minPlayers: 20
+  - type: AntagObjectives
+    objectives:
+    - CorvaxWizardSurviveObjective
+  - type: AntagSelection
+    selectionTime: BeforeJobs
+    agentName: corvax-wizard-roundend-name
+    definitions:
+    - spawnerPrototype: SpawnPointWizard
+      prefRoles: [ CorvaxWizard ]
+      playerRatio: 20
+      min: 1
+      max: 1
+      mindRoles:
+      - MindRoleCorvaxWizard
+      startingGear: CorvaxWizardGear
+      unequipOldGear: true
+      roleLoadout:
+      - RoleSurvivalEVA
+      components:
+      - type: CorvaxWizard
+      - type: RandomMetadata
+        nameSegments:
+        - corvax_wizard_first
+        - corvax_wizard_last
+      - type: NpcFactionMember
+        factions:
+        - CorvaxWizard
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+  - type: RuleGrids
+  - type: LoadMapRule
+    mapPath: /Maps/Nonstations/nukieplanet.yml # temp
+
+- type: entity
+  parent: BaseCorvaxWizardRule
+  id: BaseCorvaxWizardRuleMidround
+  components:
+  - type: StationEvent
+    earliestStart: 35
+    weight: 5.5
+    minimumPlayers: 20
+    duration: 1
+  - type: AntagSelection
+    selectionTime: PostPlayerSpawn
+    definitions:
+    - spawnerPrototype: SpawnPointWizard
+      playerRatio: 20
+      min: 1
+      max: 1
+      pickPlayer: false
+      mindRoles:
+      - MindRoleCorvaxWizard
+      startingGear: CorvaxWizardGear
+      unequipOldGear: true
+      roleLoadout:
+      - RoleSurvivalEVA
+      components:
+      - type: CorvaxWizard
+      - type: RandomMetadata
+        nameSegments:
+        - corvax_wizard_first
+        - corvax_wizard_last
+      - type: NpcFactionMember
+        factions:
+        - CorvaxWizard
+
+- type: entity
+  parent: BaseCorvaxWizardRuleMidround
+  id: CorvaxWizard
+
+- type: gamePreset
+  id: CorvaxWizard
+  alias:
+    - corvaxwiz
+  name: corvax-wizard-title
+  description: corvax-wizard-description
+  showInVote: false
+  rules:
+    - CorvaxWizard
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation

@@ -1,4 +1,5 @@
 using Content.Server._CorvaxNext.Api.Components;
+using Content.Server._CorvaxNext.Wizard;
 using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
@@ -34,10 +35,13 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultThiefRule = "Thief";
 
-    // Corvax-Next-Api-Start
+    // Corvax-Next-Antag-Start
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultApiRule = "Api";
-    // Corvax-Next-Api-End
+
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultWizardRule = "CorvaxWizard";
+    // Corvax-Next-Antag-End
 
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
@@ -158,7 +162,7 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(thief);
 
-        // Corvax-Next-Api-Start
+        // Corvax-Next-Antag-Start
         Verb api = new()
         {
             Text = Loc.GetString("admin-verb-text-make-api"),
@@ -172,6 +176,20 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-api"),
         };
         args.Verbs.Add(api);
-        // Corvax-Next-Api-End
+
+        Verb wizard = new()
+        {
+            Text = Loc.GetString("admin-verb-make-corvax-wizard"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_CorvaxNext/Interface/Misc/job_icons.rsi"), "wizard"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<CorvaxWizardRuleComponent>(targetPlayer, DefaultWizardRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-text-make-corvax-wizard"),
+        };
+        args.Verbs.Add(wizard);
+        // Corvax-Next-Antag-End
     }
 }

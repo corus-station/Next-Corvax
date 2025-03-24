@@ -182,6 +182,13 @@ public partial struct AntagSelectionDefinition()
     /// </remarks>
     [DataField]
     public EntProtoId? SpawnerPrototype;
+
+    /// <summary>
+    /// Corvax-Next
+    /// Unequip all gear before making antag
+    /// </summary>
+    [DataField]
+    public bool UnequipOldGear;
 }
 
 /// <summary>

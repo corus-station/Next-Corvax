@@ -38,6 +38,7 @@ public abstract class SharedSpellsSystem : EntitySystem
     #region Dependencies
 
     [Dependency] protected readonly IMapManager MapManager = default!;
+    [Dependency] protected readonly IPrototypeManager ProtoMan = default!;
     [Dependency] protected readonly SharedTransformSystem TransformSystem = default!;
     [Dependency] protected readonly EntityLookupSystem Lookup = default!;
     [Dependency] protected readonly SharedMapSystem Map = default!;
@@ -106,7 +107,7 @@ public abstract class SharedSpellsSystem : EntitySystem
         _jitter.DoJitter(ev.Target, ev.JitterStutterDuration, true, status: status);
         _stutter.DoStutter(ev.Target, ev.JitterStutterDuration, true, status);
 
-        var targetWizard = HasComp<WizardComponent>(ev.Target);
+        var targetWizard = HasComp<CorvaxWizardComponent>(ev.Target);
 
         if (!targetWizard)
             EnsureComp<ClumsyComponent>(ev.Target);
@@ -127,7 +128,7 @@ public abstract class SharedSpellsSystem : EntitySystem
 
         Stun.TryParalyze(ev.Target, ev.ParalyzeDuration, true, status);
 
-        var targetWizard = HasComp<WizardComponent>(ev.Target);
+        var targetWizard = HasComp<CorvaxWizardComponent>(ev.Target);
 
         SetGear(ev.Target, ev.Gear, !targetWizard);
 

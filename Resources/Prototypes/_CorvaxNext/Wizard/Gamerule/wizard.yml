@@ -1,0 +1,57 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleCorvaxWizard
+  name: Wizard Role
+  components:
+  - type: MindRole
+    antagPrototype: CorvaxWizard
+    exclusiveAntag: true
+  - type: CorvaxWizardRole
+
+- type: antag
+  id: CorvaxWizard
+  name: roles-antag-corvax-wizard-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-corvax-wizard-description
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30h # Corvax-RoleTime
+
+- type: startingGear
+  id: CorvaxWizardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorDarkBlue
+    head: ClothingHeadHatWizard
+    outerClothing: ClothingOuterWizard
+    shoes: ClothingShoesWizard
+    back: ClothingBackpack
+    pocket1: CorvaxWizardsGrimoire
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointCorvaxWizard
+  components:
+  - type: GhostRole
+    name: roles-corvax-wizard-name
+    description: roles-corvax-wizard-objective
+    rules: ghost-role-information-antagonist-rules
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Clothing/Head/Hats/wizardhat.rsi
+        state: icon
+
+- type: factionIcon
+  id: CorvaxWizardFaction
+  isShaded: true
+  priority: 11
+  showTo:
+    components:
+      - ShowAntagIcons
+      - CorvaxWizard
+  icon:
+    sprite: /Textures/_CorvaxNext/Interface/Misc/job_icons.rsi
+    state: wizard

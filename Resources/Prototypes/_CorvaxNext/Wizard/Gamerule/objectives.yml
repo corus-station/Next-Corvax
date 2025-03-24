@@ -1,0 +1,19 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: CorvaxBaseWizardObjective
+  components:
+  - type: Objective
+    difficulty: 1.5
+    issuer: objective-issuer-corvax-wizard-federation
+
+- type: entity
+  parent: [CorvaxBaseWizardObjective, BaseSurviveObjective]
+  id: CorvaxWizardSurviveObjective
+  name: Survive, causing as much chaos as possible
+  description: Space Wizard Federation has sent you to wreck havoc on the station. Don't dissapoint them.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Head/Hats/wizardhat.rsi
+      state: icon
